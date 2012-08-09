@@ -1,0 +1,18 @@
+%h2 Sign in
+= form_for(resource, :as => resource_name, :url => session_path(resource_name), :class => 'form') do |f|
+  = devise_error_messages!
+  %br
+  %div
+    = f.label :email
+    = f.email_field :email
+  %div
+    = f.label :password
+    = f.password_field :password
+  %div
+    %label.checkbox
+    %input{:type => "checkbox", :name => "user[remember_me]", :value => "1"}
+      = "&nbsp;Remember me".html_safe
+  %br
+  %div  
+    %button.btn.btn-primary{:type => "submit"} Sign in 
+= render :partial => "devise/shared/links"
