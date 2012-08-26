@@ -17,6 +17,7 @@ gem "email_spec", ">= 1.2.1", :group => :test
 gem "factory_girl_rails", ">= 3.5.0", :group => [:development, :test]
 gem "bootstrap-sass", ">= 2.0.4.0"
 gem "simple_form"
+gem "database_cleaner"
 gem "devise", ">= 2.1.2"
 gem "cancan", ">= 1.6.8"
 gem "rolify", ">= 3.1.0"
