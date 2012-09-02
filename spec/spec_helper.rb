@@ -54,18 +54,12 @@ Spork.prefork do
       DatabaseCleaner.clean_with(:truncation)
     end
 
-    config.before(:each) do
-      DatabaseCleaner.start
-    end
-
-    config.after(:each) do
-      DatabaseCleaner.clean
-    end
   end
 end
 
 Spork.each_run do
   # This code will be run each time you run your specs.
+  DatabaseCleaner.clean
   Dir[Rails.root.join("spec/models/**/*.rb")].each {|f| require f}
   Dir[Rails.root.join("spec/controllers/**/*.rb")].each {|f| require f}
   Dir[Rails.root.join("spec/lib/**/*.rb")].each {|f| require f}
